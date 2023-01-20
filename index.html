@@ -15,6 +15,9 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- viene del modal -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="source/bootstrap-side-modals.css">
 </head>
 <body>
   <button onclick="topFunction()" id="myBtn" title="Volver al inicio"><i class="fa-solid fa-arrow-up"></i></button>
@@ -125,28 +128,20 @@
     <div class="grid_8 socialmedia fadeInUp">
       <h3 id="icono"> <i class="fa fa-share-nodes" id="detalle"></i> Social Media - Contactar</h3>
       <div class="text-center">
-        <!-- Facebook -->
-        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="#!" role="button">
-          <i class="fa-brands fa-facebook-f" title="Facebook"></i>
-        </a>
-        <!-- Twitter -->
-       <!--  <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="#!" role="button">
-          <i class="fab fa-twitter" title="Twitter"></i>
-        </a> -->
         <!-- Instagram -->
-        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="#!" role="button">
+        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="https://www.instagram.com/julio__caba/" role="button" target="_blank">
           <i class="fab fa-instagram" title="Instagram"></i>
         </a>
         <!-- Google -->
-        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="#!" role="button">
-            <i class="fab fa-google" title="Google+"></i >
+        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" data-toggle="modal" data-target="#modal_contacto" role="button">
+            <i class="fa fa-envelope" title="Correo"></i >
         </a>
         <!-- Linkedin -->
-        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="#!" role="button">
+        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="https://ar.linkedin.com/in/julio-caba/" target="_blank" role="button">
             <i class="fab fa-linkedin-in" title="Linkedin"></i>
         </a>
         <!-- Github -->
-        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="#!" role="button">
+        <a class="btn text-white btn-floating m-1" style="background-color: #33a4c9;" href="https://github.com/julio-caba" target="_blank" role="button">
             <i class="fab fa-github" title="Github"></i>
         </a>        
       </div>
@@ -162,12 +157,106 @@
         <li class="">Aprendizaje rápido en nuevas tecnologías</li>
         <li class="">carnet B1, coche propio</li>
       </ul>
-    </div>
-   
+    </div>   
   </section>
-
+  <!-- modal contacto  -->
+  <div class="modal fade" id="modal_contacto" tabindex="-1" role="dialog" aria-labelledby="modal_contacto">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- aca abre -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <form name="gform" id="gform" enctype="text/plain"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSfGew38H6H_vrsqQ_E24kvyngQyhVfdGR3B3Oidi5IEdnU4iQ/formResponse?"
+                target="hidden_iframe" onsubmit="submitted=true;">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="section-heading">
+                      <h2 class="fw-bold">Contactate conmigo </h2>
+                    </div>
+                  </div>
+                  <div class="col-lg-12" style="padding: 10px;">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <fieldset class="pb-3 pt-2">
+                          <input class="form-control" type="text" name="entry.1281584187" id="entry.1281584187"
+                            placeholder="Ingrese su nombre" autocomplete="on" required>
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-6">
+                        <fieldset class="pb-3 pt-2">
+                          <input class="form-control" type="text" name="entry.450151213" id="entry.450151213"
+                            pattern="[^ @]*@[^ @]*" placeholder="Ingrese su correo" required="">
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                        <fieldset class="pb-3 pt-2">
+                          <textarea type="text" name="entry.526116415" id="entry.526116415"
+                            class="form-control" placeholder="Escriba su mensaje" required=""></textarea>
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="section-heading">
+                          <button type="submit" id="form-submit" class="btn btn-info">Enviar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </form>
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                onload="if(submitted) {window.location='https://julio-caba.github.io/argprogramajuliocaba/';}"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- aca cierra -->
+    </div>
+  </div>
+  <!--  -->
+  <!-- Scripts -->
+  <script src="source/jquery/jquery.min.js"></script>
+  <script src="source/js/bootstrap.bundle.min.js"></script>
+  <script src="source/js/owl-carousel.js"></script>
+  <script src="source/js/animation.js"></script>
+  <script src="source/js/imagesloaded.js"></script>
+  <script src="source/js/custom.js"></script>
+  <script src="source/js/boton.js"></script>
+  <script src="source/js/jquery-2.1.1.js"></script>
+  <!-- modal -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- otro scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript">var submitted = false;</script>
+  <script type="text/javascript">
+    $('#gform').on('submit', function (e) {
+      $('#gform *').fadeOut(2000);
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+        $('.counter').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});  
+});  
+</script>
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script src="source/boton.js"></script>
+
 </body>
 </html>
